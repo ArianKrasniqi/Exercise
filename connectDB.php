@@ -19,7 +19,7 @@ echo "Connected";
 
 echo "<br>";
 
-$sqlQuery = "INSERT INTO testtable (title, description) VALUES (?,  ?)";
+$sqlQuery = "INSERT INTO testtable (title, description) VALUES ('$title',  '$description')";
 
 if(mysqli_query($conn, $sqlQuery)){
   echo "Data inserted";
