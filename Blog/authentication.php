@@ -6,7 +6,7 @@ session_start();
 $username = $_POST['username'];
 $password = $_POST['password'];
 
-$sql = "SELECT id, username, password FROM users WHERE username='$username'";
+$sql = "SELECT id, username, password, role FROM users WHERE username='$username'";
 $result = $conn->query($sql); 
 
 if ($result->num_rows > 0) {
@@ -17,6 +17,7 @@ if ($result->num_rows > 0) {
       $_SESSION['loggedin'] = TRUE;
       $_SESSION['username'] = $row['username'];
       $_SESSION['password'] = $row['password'];
+      $_SESSION['role'] = $row['role'];
       
       header('Location: home.php');
     }else{

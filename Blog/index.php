@@ -1,8 +1,14 @@
 <body>
-  <?php include 'header.php' ?>
+  <?php 
+  include 'header.php';
+  // session_start();
+  
+  if(isset($_SESSION["loggedin"])){
+    if($_SESSION["loggedin"]) header("Location: home.php");
+  }
+  ?>
 
   <div class="login">
-    <h1>Login here</h1>
     <form action="authentication.php" method="post">
       <div class="form-group">
         <label >Email address</label>
